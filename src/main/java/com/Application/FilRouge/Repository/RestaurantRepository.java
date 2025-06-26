@@ -1,4 +1,4 @@
 package com.Application.FilRouge.Repository;
 
-public class RestaurantRepository {
+public interface RestaurantRepository {
 }

@@ -1,6 +1,6 @@
 package com.Application.FilRouge.Model;
 
 public enum LivraisonType {
-    LIVRASON,
+    LIVRAISON,
     A_EMPORTER
 }

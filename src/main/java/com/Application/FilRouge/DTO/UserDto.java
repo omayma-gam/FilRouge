@@ -1,21 +1,18 @@
-package com.Application.FilRouge.Model;
+package com.Application.FilRouge.DTO;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import com.Application.FilRouge.Model.Role;
+import com.Application.FilRouge.Model.User;
+import lombok.Value;
 
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@NoArgsConstructor
-@AllArgsConstructor
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long  id ;
-    private String  username;
-    private String  password;
-    private String  email ;
-    private Role   role;
+import java.io.Serializable;
+
+
+public class UserDto implements Serializable {
+    Long id;
+    String username;
+    String password;
+    String email;
+    Role role;
 
     public Long getId() {
         return id;

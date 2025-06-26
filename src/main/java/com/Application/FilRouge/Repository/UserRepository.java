@@ -1,4 +1,4 @@
 package com.Application.FilRouge.Repository;
 
-public class UserRepository {
+public interface UserRepository {
 }

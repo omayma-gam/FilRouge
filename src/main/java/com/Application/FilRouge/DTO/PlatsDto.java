@@ -1,20 +1,21 @@
-package com.Application.FilRouge.Model;
+package com.Application.FilRouge.DTO;
 
-import jakarta.persistence.*;
+import com.Application.FilRouge.Model.Category;
+import com.Application.FilRouge.Model.Plats;
+import lombok.Value;
 
-@Entity
-public class Plats {
+import java.io.Serializable;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String description;
-    private double prix;
-    private boolean available;
 
-    @Enumerated(EnumType.STRING)
-    private Category category;
+public class PlatsDto implements Serializable {
+    Long id;
+    String name;
+    String description;
+    double prix;
+    boolean available;
+    Category category;
+    CommandeDto commande;
+    RestaurantDto restaurant;
 
     public Long getId() {
         return id;
@@ -64,27 +65,19 @@ public class Plats {
         this.category = category;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "commande_id")
-    private Commande commande;
-
-    public Commande getCommande() {
+    public CommandeDto getCommande() {
         return commande;
     }
 
-    public void setCommande(Commande commande) {
+    public void setCommande(CommandeDto commande) {
         this.commande = commande;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "restaurant_id")
-    private Restaurant restaurant;
-
-    public Restaurant getRestaurant() {
+    public RestaurantDto getRestaurant() {
         return restaurant;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
+    public void setRestaurant(RestaurantDto restaurant) {
         this.restaurant = restaurant;
     }
 }
