@@ -1,4 +1,7 @@
 package com.Application.FilRouge.Repository;
 
-public interface PlatRepository {
+import com.Application.FilRouge.Model.Plats;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PlatRepository extends JpaRepository<Plats,Long> {
 }

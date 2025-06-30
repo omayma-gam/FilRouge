@@ -1,8 +1,7 @@
 package com.Application.FilRouge.DTO;
 
 import com.Application.FilRouge.Model.Category;
-import com.Application.FilRouge.Model.Plats;
-import lombok.Value;
+import com.Application.FilRouge.Model.Commande;
 
 import java.io.Serializable;
 
@@ -49,6 +48,7 @@ public class PlatsDto implements Serializable {
         this.prix = prix;
     }
 
+
     public boolean isAvailable() {
         return available;
     }
@@ -65,7 +65,7 @@ public class PlatsDto implements Serializable {
         this.category = category;
     }
 
-    public CommandeDto getCommande() {
+    public Commande getCommande() {
         return commande;
     }
 

@@ -1,4 +1,7 @@
 package com.Application.FilRouge.Repository;
 
-public interface RestaurantRepository {
+import com.Application.FilRouge.Model.Restaurant;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RestaurantRepository extends JpaRepository<Restaurant,Long> {
 }
