@@ -1,4 +1,7 @@
 package com.Application.FilRouge.Repository;
 
-public interface CommandeRepository {
+import com.Application.FilRouge.Model.Commande;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CommandeRepository extends JpaRepository<Commande,Long> {
 }

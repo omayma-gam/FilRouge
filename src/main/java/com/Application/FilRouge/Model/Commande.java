@@ -30,8 +30,8 @@ public class Commande {
         this.id = id;
     }
 
-    public LocalDateTime getDatedecommande() {
-        return datedecommande;
+    public LocalDateTime getDatedecommande(LocalDateTime datedecommande) {
+        return this.datedecommande;
     }
 
     public void setDatedecommande(LocalDateTime datedecommande) {
@@ -91,5 +91,9 @@ public class Commande {
 
     public void setPlats(List<Plats> plats) {
         this.plats = plats;
+    }
+
+    public LocalDateTime getDatedecommande() {
+        return datedecommande;
     }
 }
