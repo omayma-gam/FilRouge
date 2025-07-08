@@ -6,6 +6,5 @@ public enum Status {
     PRETE,
     EN_LIVRAISON,
     LIVRE,
-    ANNULEE,
-    REFUSEE
+    ANNULEE
 }
