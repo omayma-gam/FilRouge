@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1/auth")
 public class AuthentificationController {
-    private final AuthentificationService authentificationService;
 
+    private final AuthentificationService authentificationService;
 
     public AuthentificationController(AuthentificationService authentificationService) {
         this.authentificationService = authentificationService;
@@ -20,8 +20,9 @@ public class AuthentificationController {
     ) {
         return ResponseEntity.ok(authentificationService.register(request));
     }
+
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthentificationService> authenticate(
+    public ResponseEntity<AuthentificationResponse> authenticate(
             @RequestBody AuthetificationRequest request
     ) {
         return ResponseEntity.ok(authentificationService.authenticate(request));

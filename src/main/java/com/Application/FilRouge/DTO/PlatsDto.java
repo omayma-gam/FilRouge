@@ -1,20 +1,18 @@
 package com.Application.FilRouge.DTO;
 
 import com.Application.FilRouge.Model.Category;
-import com.Application.FilRouge.Model.Commande;
 
 import java.io.Serializable;
 
-
 public class PlatsDto implements Serializable {
-    Long id;
-    String name;
-    String description;
-    double prix;
-    boolean available;
-    Category category;
-    CommandeDto commande;
-    RestaurantDto restaurant;
+    private Long id;
+    private String name;
+    private String description;
+    private double prix;
+    private boolean available;
+    private Category category;
+    private CommandeDto commande;
+    private RestaurantDto restaurant;
 
     public Long getId() {
         return id;
@@ -48,7 +46,6 @@ public class PlatsDto implements Serializable {
         this.prix = prix;
     }
 
-
     public boolean isAvailable() {
         return available;
     }
@@ -65,7 +62,7 @@ public class PlatsDto implements Serializable {
         this.category = category;
     }
 
-    public Commande getCommande() {
+    public CommandeDto getCommande() {
         return commande;
     }
 

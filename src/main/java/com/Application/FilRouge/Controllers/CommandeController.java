@@ -3,6 +3,7 @@ package com.Application.FilRouge.Controllers;
 
 import com.Application.FilRouge.DTO.CommandeDto;
 import com.Application.FilRouge.Services.CommandeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +12,10 @@ import java.util.List;
 @RequestMapping("/commande")
 public class CommandeController {
 
+
     private final CommandeService commandeService;
 
-    public CommandeController(CommandeService commandeService){
+    public CommandeController(CommandeService commandeService) {
         this.commandeService = commandeService;
     }
 

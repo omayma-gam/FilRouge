@@ -4,11 +4,12 @@ import com.Application.FilRouge.DTO.CommandeDto;
 import com.Application.FilRouge.Mappers.CommandeMapper;
 import com.Application.FilRouge.Model.Commande;
 import com.Application.FilRouge.Repository.CommandeRepository;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Service
 public class CommandeService {
 
     private final CommandeRepository commandeRepository;
