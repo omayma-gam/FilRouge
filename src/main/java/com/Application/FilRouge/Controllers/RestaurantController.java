@@ -26,7 +26,10 @@ public class RestaurantController {
     public List<RestaurantDto> getAllRestaurant(){
         return restaurantService.listeRestaurants();
     }
-
+   @GetMapping("/listeRestaurantsName")
+   public List<RestaurantDto> fetRestaurantsName(@RequestParam String name){
+        return restaurantService.listRestaurantsName(name);
+   }
 
     @PutMapping("/update/{id}")
     public RestaurantDto updatRestaurant(@PathVariable Long id , @RequestBody RestaurantDto restaurantDto) {

@@ -50,12 +50,10 @@ public class AuthentificationService {
 
         String jwtToken = jwtService.generateToken(user);
 
-        AuthentificationResponse response = new AuthentificationResponse();
-        response.setToken(jwtToken);
-        return response;
+        return new AuthentificationResponse(jwtToken, user.getId(), user.getUsername(), user.getEmail(), user.getRole());
     }
 
-    public AuthentificationResponse authenticate(AuthetificationRequest request) {
+    public AuthentificationResponse authenticate(AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
@@ -71,8 +69,6 @@ public class AuthentificationService {
 
         String jwtToken = jwtService.generateToken(user);
 
-        AuthentificationResponse response = new AuthentificationResponse();
-        response.setToken(jwtToken);
-        return response;
+        return new AuthentificationResponse(jwtToken, user.getId(), user.getUsername(), user.getEmail(), user.getRole());
     }
 }

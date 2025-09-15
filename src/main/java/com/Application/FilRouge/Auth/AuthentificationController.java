@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/auth")
 public class AuthentificationController {
 
@@ -23,7 +23,7 @@ public class AuthentificationController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<AuthentificationResponse> authenticate(
-            @RequestBody AuthetificationRequest request
+            @RequestBody AuthenticationRequest request
     ) {
         return ResponseEntity.ok(authentificationService.authenticate(request));
     }

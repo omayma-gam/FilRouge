@@ -21,8 +21,6 @@ public class Restaurant {
     private String email;
 
 
-//    @OneToMany
-
 
 
     public Long getId() {

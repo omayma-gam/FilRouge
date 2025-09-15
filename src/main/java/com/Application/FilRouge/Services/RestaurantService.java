@@ -35,6 +35,12 @@ public class RestaurantService {
                 .collect(Collectors.toList());
     }
 
+    public List<RestaurantDto> listRestaurantsName(String name){
+        return restaurantRepository.findByName(name).stream()
+                .map(restaurantMapper::restaurantToDto)
+                .collect(Collectors.toList());
+    }
+
     public RestaurantDto modifierRestaurant(Long id , RestaurantDto restaurantDto){
         Restaurant restaurant=restaurantRepository.findById(id).orElse(null);
 

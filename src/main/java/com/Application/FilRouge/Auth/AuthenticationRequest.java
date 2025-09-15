@@ -1,15 +1,15 @@
 package com.Application.FilRouge.Auth;
 
-public class AuthetificationRequest {
+public class AuthenticationRequest {
     private String email;
     private String password;
 
-    public AuthetificationRequest(String email, String password) {
+    public AuthenticationRequest(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
-    public AuthetificationRequest() {
+    public AuthenticationRequest() {
     }
 
     public String getEmail() {
