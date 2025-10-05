@@ -1,7 +1,6 @@
 package com.Application.FilRouge.Auth;
 
 import com.Application.FilRouge.Config.JwtService;
-import com.Application.FilRouge.Model.Admin;
 import com.Application.FilRouge.Model.Client;
 import com.Application.FilRouge.Model.Restaurateur;
 import com.Application.FilRouge.Model.User;
@@ -35,7 +34,6 @@ public class AuthentificationService {
 
         // Création de l'utilisateur selon son rôle
         switch (request.getRole()) {
-            case ADMIN -> user = new Admin();
             case RESTAURATEUR -> user = new Restaurateur();
             case CLIENT -> user = new Client();
             default -> throw new IllegalArgumentException("Invalid role: " + request.getRole());

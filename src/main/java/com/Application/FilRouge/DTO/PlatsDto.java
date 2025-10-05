@@ -11,7 +11,7 @@ public class PlatsDto implements Serializable {
     private double prix;
     private boolean available;
     private Category category;
-    private CommandeDto commande;
+    private String photo;
     private RestaurantDto restaurant;
 
     public Long getId() {
@@ -62,13 +62,15 @@ public class PlatsDto implements Serializable {
         this.category = category;
     }
 
-    public CommandeDto getCommande() {
-        return commande;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setCommande(CommandeDto commande) {
-        this.commande = commande;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
+
+
 
     public RestaurantDto getRestaurant() {
         return restaurant;
@@ -77,4 +79,5 @@ public class PlatsDto implements Serializable {
     public void setRestaurant(RestaurantDto restaurant) {
         this.restaurant = restaurant;
     }
+
 }

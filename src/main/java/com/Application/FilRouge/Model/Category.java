@@ -6,5 +6,6 @@ public enum Category {
     POISSON,
     DESSERT,
     BOISSON,
-    AUTRE
+    AUTRE,
+    VEGAN  // Added VEGAN to match frontend enum
 }

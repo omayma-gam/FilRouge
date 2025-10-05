@@ -1,5 +1,6 @@
 package com.Application.FilRouge.Model;
 
+import com.Application.FilRouge.Model.Category;
 import jakarta.persistence.*;
 
 @Entity
@@ -12,6 +13,9 @@ public class Plats {
     private String description;
     private double prix;
     private boolean available;
+    
+    private String photo;  // Added photo field
+    private String allergenes;  // Added allergenes field
 
     @Enumerated(EnumType.STRING)
     private Category category;
@@ -64,16 +68,22 @@ public class Plats {
         this.category = category;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "commande_id")
-    private Commande commande;
-
-    public Commande getCommande() {
-        return commande;
+    // Getter and setter for photo
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setCommande(Commande commande) {
-        this.commande = commande;
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    // Getter and setter for allergenes
+    public String getAllergenes() {
+        return allergenes;
+    }
+
+    public void setAllergenes(String allergenes) {
+        this.allergenes = allergenes;
     }
 
     @ManyToOne
