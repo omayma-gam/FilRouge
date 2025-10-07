@@ -43,10 +43,10 @@ public class PlatService {
         plats.setPrix(platsDto.getPrix());
         plats.setAvailable(platsDto.isAvailable());
         plats.setCategory(platsDto.getCategory());
+        plats.setPhoto(platsDto.getPhoto());
 
-       
-
-        return platMapper.platsToDto(plats);
+        Plats updatedPlats = platRepository.save(plats);
+        return platMapper.platsToDto(updatedPlats);
     }
 
     public void supprimerPlats(Long id){

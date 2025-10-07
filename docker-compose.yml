@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  fil-rouge-db:
+    container_name: fil-rouge-db
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: FilRouge
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    networks:
+      - fil-rouge-net
+    volumes:
+      - fil-rouge-vol:/var/lib/mysql
+
+  fil-rouge-app:
+    build:
+      context: .
+    container_name: fil-rouge-app
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:mysql://fil-rouge-db:3306/FilRouge?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - fil-rouge-db
+    networks:
+      - fil-rouge-net
+    ports:
+      - "8091:8083"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8091/actuator/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  fil-rouge-net:
+    driver: bridge
+
+volumes:
+  fil-rouge-vol:

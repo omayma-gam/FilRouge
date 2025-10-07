@@ -80,7 +80,7 @@ public class SimplePlatController {
             Plats existingPlat = platRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Dish not found"));
             
-            // Update fields
+
             existingPlat.setName(plat.getName());
             existingPlat.setDescription(plat.getDescription());
             existingPlat.setPrix(plat.getPrix());
